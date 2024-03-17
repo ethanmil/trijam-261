@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://drgo0xhtah6tp"]
+
+[ext_resource type="Script" path="res://missle.gd" id="1_2qw6o"]
+[ext_resource type="Texture2D" uid="uid://dmp2tc60srh64" path="res://torpedo.png" id="1_pw11e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4wsn"]
+atlas = ExtResource("1_pw11e")
+region = Rect2(0, 0, 11, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvaxs"]
+atlas = ExtResource("1_pw11e")
+region = Rect2(11, 0, 11, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8w4p"]
+atlas = ExtResource("1_pw11e")
+region = Rect2(22, 0, 11, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahgib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4wsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvaxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8w4p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j7a87"]
+
+[node name="missle" type="CharacterBody2D"]
+script = ExtResource("1_2qw6o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1.19209e-07)
+rotation = 2.39285
+sprite_frames = SubResource("SpriteFrames_ahgib")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 3)
+shape = SubResource("CapsuleShape2D_j7a87")

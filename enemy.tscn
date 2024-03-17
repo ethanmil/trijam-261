@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt6gylvojg0si"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_6ru4w"]
+[ext_resource type="Texture2D" uid="uid://yh0dtwb7ygka" path="res://scout.png" id="2_uq3rp"]
+
+[node name="enemy" type="Node2D"]
+script = ExtResource("1_6ru4w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 1)
+rotation = 2.41205
+texture = ExtResource("2_uq3rp")
+
+[node name="missle_spawn" type="Timer" parent="."]
+wait_time = 0.504
+autostart = true
+
+[connection signal="timeout" from="missle_spawn" to="." method="_on_missle_spawn_timeout"]
