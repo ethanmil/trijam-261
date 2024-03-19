@@ -13,7 +13,6 @@ rotation = 2.41205
 texture = ExtResource("2_uq3rp")
 
 [node name="missle_spawn" type="Timer" parent="."]
-wait_time = 0.504
 autostart = true
 
 [connection signal="timeout" from="missle_spawn" to="." method="_on_missle_spawn_timeout"]
