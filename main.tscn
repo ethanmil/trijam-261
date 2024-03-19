@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://cqmyx28wj5h2p"]
+[gd_scene load_steps=82 format=3 uid="uid://cqmyx28wj5h2p"]
 
 [ext_resource type="Texture2D" uid="uid://f1kfmk5ftejj" path="res://earth.png" id="1_gppj2"]
 [ext_resource type="Script" path="res://main.gd" id="1_p4i6w"]
@@ -550,16 +550,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwfov"]
+radius = 32.0
+
 [node name="main" type="Node2D"]
 script = ExtResource("1_p4i6w")
 
-[node name="planet" type="Node2D" parent="."]
+[node name="planet" type="CharacterBody2D" parent="."]
 position = Vector2(400, 300)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="planet"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rk72b")
 autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="planet"]
+shape = SubResource("CircleShape2D_bwfov")
 
 [node name="enemy_spawn" type="Timer" parent="."]
 wait_time = 1.227

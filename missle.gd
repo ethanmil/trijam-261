@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-
 var planet_position = Vector2(0,0)
 var speed = 20
 
@@ -18,5 +16,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	velocity = (planet_position - global_position).normalized() * delta * speed
-	move_and_collide(velocity)
+	var collision_info = move_and_collide(velocity)
+	if collision_info:
+		queue_free()
 	pass
