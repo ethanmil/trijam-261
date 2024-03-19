@@ -13,7 +13,6 @@ func _process(delta):
 
 
 func _on_missle_spawn_timeout():
-	print("spawn missle")
 	var newMissle = missle.instantiate()
 	
 	add_child(newMissle)
