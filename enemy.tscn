@@ -9,7 +9,7 @@ script = ExtResource("1_6ru4w")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, 1)
-rotation = 2.41205
+rotation = 1.5708
 texture = ExtResource("2_uq3rp")
 
 [node name="missle_spawn" type="Timer" parent="."]

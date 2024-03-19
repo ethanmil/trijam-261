@@ -2,8 +2,11 @@ extends Node2D
 
 var missle = preload("res://missle.tscn")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var planet_position = get_node("../planet").position
+	look_at(planet_position)
 	pass # Replace with function body.
 
 
